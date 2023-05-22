@@ -1,0 +1,286 @@
+
+                                                17-02-2023 Friday 
+
+Nodejs core
+express js
+mongoose js
+passport js
+multer js
+axios
+fetch
+socket io
+nodemailer
+googleapi's 
+
+                                                18-02-2023 Saturday
+
+Types of language
+programming language - Java c cpp
+markup language - html
+Scripting language - js python 
+
+Compiler and Interpreture
+ Compiler: 
+    It is a translator which takes input i.e., High-Level Language, and produces an output of low-level language i.e. machine or assembly language. 
+    A compiler is more intelligent than an assembler it checks all kinds of limits, ranges, errors, etc.
+    But its program run time is more and occupies a larger part of memory. It has a slow speed because a compiler goes through the entire program and then translates the entire program into machine codes.
+
+    	It converts the source code into object code.
+
+ Interpreter: 
+    An interpreter is a program that translates a programming language into a comprehensible language. –  
+    It translates only one statement of the program at a time.
+    Interpreters, more often than not are smaller than compilers.
+
+        It does not convert source code into object code instead it scans it line by line
+
+
+var let const
+
+truthy falsy
+
+decliration
+
+initialization
+
+Windows
+
+browser apis
+
+server
+
+this
+
+
+                                       25-02-2023 Saturday
+
+Loops and Functions
+
+Method : .Join(), .split()
+
+Loops
+for, while, do-while, foreach,for...of,for..in
+
+Note- Break doesn't works in foreach
+
+                                       26-02-2023 Sunday
+
+Functions
+
+es5-before
+Functions statement
+Functions expression
+Anonumous Functions
+es6-after
+Fat Arrow Functions
+Fat Arrow with one parameter
+Fat Arrow with implicit return
+
+
+                                       27-02-2023 Monday
+
+iife(s) -> imediatly invoked function expression
+Objects
+
+                                       03-03-2023 Friday
+
+higher order Functions
+   -> any function accepting another function as parameter or teturning a function (Note always not some time)
+
+How array an objects
+   -> a[-1000] = 2 => {-1000 : 2}
+
+helper/method/inbuilt functions -> pop(),push(),shift(),unshift()
+
+map
+   -> structure is almost same as foreach,but it requires you to return somthing, it creates a blank imaginary array and
+   everytime the value you return is placed inside that array
+   
+filters
+   -> structure exactly same as map, but you don't return value in filter but true or false
+   ex - make and arry with 100 space and fill it with null without using loop
+
+
+                                       04-03-2023 Saturday
+
+This keyword
+call apply and binding
+
+imp for interview
+
+this keyword - this keyword is especial type of keyword which changes its value according to the context
+
+all the html code is an object for JavaScript
+
+global - Windows
+function - Windows
+method - object
+
+es5 function inside method = Windows
+es6 function inside method = object
+
+in the arrow function this takes its value from prents
+this in call back function it takes its value which is just before the nears method 
+
+whenever we run fucntion this takes it value windows as by default 
+but if we want to changes its value to some other object means instead of taking value windows it takes some other object 
+then we use call apply and bind
+
+call
+call takes more than two arguments which is not a good practice
+Call() Method: The call method is basically used to invoke the function with different this object. In JavaScript, this refers to an object. It depends on how we are calling a particular function. In the global scope, this refers to the global object window. Inside function also this refers to the global object window.
+
+In strict mode, when we use any function then this refers to undefined. In functions like call, this could refer to a different object. With the help of the call method, we can invoke a particular function with different objects.
+
+apply
+   apply takes only two arguments
+
+bind
+   bind return an bounded function 
+   so than we can call it when ever we want to call 
+
+
+                                          Node 
+
+
+
+Install Node js
+lts-long terrm support
+in the first java scirpt file create a var A with a value 12 var = 12 now we need to export iton a second new file 
+we need to import it
+to export we do: module.exports = (anything you want) 
+in new file to import require("./file name")
+
+/ - root folder
+. same folder
+./ same folder 
+.. one folder back
+../ - one folder back
+../../ two folders back
+
+npx nodemon script => it will reload by it self
+<%= 2+3%>
+
+
+                           EXPRESS 
+
+package installation
+npm i express-generator -g 
+   creating new app
+      express appName --view=ejs
+      npm i 
+npm i packageName
+Express
+ejs
+
+route creation 
+    const express = require('express')
+    const app = express()
+
+creation
+    app.get('/', function (req, res) {
+    res.send('Hello World')
+    })
+
+    app.listen(3000)
+
+express views
+
+
+saari aisis files jo kin frontend se taaluk rakhti hai ejs ko chhodh kar unhe kahte hai static files aur uske liye
+public folder bana padta hai 
+
+__dirname
+path.join(dirname,dirname);
+
+
+backend ke route se value ejs bhejana
+
+
+
+
+
+there are only three ways in you can change your url
+    1. Anchar taa <a> </a> prams
+    2. get method - query
+    3. post method - body
+
+get -> req.query
+post -> req. body
+
+hum jab bhi form submit karte hai to wo form bhi kisi route par jaata hai wo  data leker jo appne likha tha form mei ab kuyki data gay hai backend par to shayad hame uski jarurat pade, aur jarurat padne par aapko use karna padega, to access kaise karoge?
+aisi koi bhi imput field jismein name naa ho wo bakcedn me nahi jaayegi
+
+
+                              MONGODB
+            
+FIRST CLASS
+
+install the package called mongoose
+   npm i mongoose
+
+setup the database with mongoose
+   var mongoose = require("mongoose")
+   mongoose.connect("mongodb://localhost:27017/dbname")
+   var userSchema = mongoose.Schema(
+      {
+         key : value,
+      }
+   )
+   modul.exports = mongoose.model("user",userSchema);
+   // app ke saare schema ingredients milke a model banate hai jiske through app create read update and delete kar payenge
+
+
+SECOND CLASS
+
+.create() 
+.then()
+
+THIRD CONCEPT
+
+//CURD OPERATIONS
+There are two type of data base:
+RDBMS - Releational Databse Managment System
+NDBMS - Noreleational database Management System
+
+RDBMS - sql-language,MySql-software
+NDBMS - Nosql,mongodb 
+cluster-chunck of data in db
+model/collaction : chunck of data in cluster
+Schema : chunck of data in model
+
+
+            PASSPORT JS 
+
+AUTHENTICATION - user ko check karna ki vo sahi user hai ya nahi
+AUTHORIZATION - user ko shirf wahi access mile jiske liye vo allowd ho.
+
+module for passport js
+   passport 
+   passport-local 
+   passport-local-mongoose
+   passport-session
+   mongoose
+
+PASSPORT : saara authentication and authorization ka main engine passport hi hai. passport is everything needed for authentication and authorization accept strategy.
+
+strategy = passport-local, auth 
+passport-local = login with username and password
+auth = login with google,facebook,bing
+
+PASSPORT-LOCAL : passport shirf main engine hota hai par wo authenticate karne ke liye kya use karega (strategy) uske likey hamne pass kiya hai passport-local, taaki passport user ko authenticate kare on the basis of username and password.
+
+
+
+PASSPORT-LOCAL-MONGOOSE : passport ko chalne ke liye kuchh extra cheejo ki jarurat hoti hai jaise ki serialize user,deserialize user and register method and few more things, wo sab humein deta plm
+
+encription is done by serializedUser method
+decription is done by deserializedUser method
+
+serializedUser,deserializedUser and register all of them are present in PASSPORT-LOCAL-MONGOOSE.
+
+EXPRESS-SESSION : kyoki jab bhi url change hota hai to ek nahi request jaati hai to wo jo nayi request hai wo nahi jaanti ke aap loggedin ho ya nahi, is wajah se har page par login karna padta hai, aisa nna karna pade isle hum us request mein extra details bhejte hai ki hum loggedin hai ya nahi and satth hi saath hum kon hai, matlab ki hummara username.
+
+cookee hajaking
+
+MONGOOSE : for connecting the database.

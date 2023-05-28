@@ -6,12 +6,25 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var expressSession = require('express-session');
 var app = express();
+var passport =  require('passport');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use(expressSession(
+  {
+    resave : false,
+    saveUninitialized: false,
+    secret:"lalalalala"
+  }
+));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.serializeUser(usersRouter.serializeUser());
+passport.deserializeUser(usersRouter.deserializeUser());
 
 app.use(logger('dev'));
 app.use(express.json());

@@ -285,8 +285,10 @@ cookee hajaking
 
 MONGOOSE : for connecting the database.
 
+      
 second CLASS
 
-npm i passport passport-local passport-local-mongoose express-session
-in app.js from line number 15 we have to start writing the code
+   npm i passport passport-local passport-local-mongoose express-session.
+   in app.js from line number 15 we have to start writing the code.
 
+   inside the app.js serializeUser written users indicates the usersFile of routes folder 

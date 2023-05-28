@@ -1,9 +1,17 @@
-var express = require('express');
-var router = express.Router();
+var mongoose = require('mongoose');
+var passportLocalMongoose = require('passport-local-mongoose');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+mongoose.connect('mongodb://127.0.0.1:27017/dbname');
 
-module.exports = router;
+var userSchema = mongoose.Schema(
+  {
+    username : String,
+    email: String,
+    number : Number,
+    password : String,
+  }
+)
+
+userSchema.plugin(passportLocalMongoose);
+
+module.exports = mongoose.model('user',userSchema);
